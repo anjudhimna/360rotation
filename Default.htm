@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        table
+        {
+            border: 1px solid #ccc;
+        }
+        table th
+        {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+        table th, table td
+        {
+            padding: 5px;
+            border-color: #ccc;
+        }
+        table img
+        {
+            height: 250px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <th>
+                Mouse Click
+            </th>
+            <th>
+                Mouse Move
+            </th>
+            <th>
+                Automatic
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <img alt="" src="" id="product1" />
+            </td>
+            <td>
+                <img alt="" src="" id="product2" />
+            </td>
+            <td>
+                <img alt="" src="" id="product3" />
+            </td>
+        </tr>
+    </table>
+    <div id="dvImages" style="display: none">
+        <img alt="" src="http://www.mathieusavard.info/threesixty/1.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/2.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/3.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/4.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/5.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/6.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/7.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/8.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/9.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/10.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/11.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/12.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/13.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/14.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/15.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/16.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/17.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/18.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/19.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/20.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/21.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/22.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/23.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/24.jpg" />
+        <img alt="" src="http://www.mathieusavard.info/threesixty/25.jpg" />
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.rawgit.com/matdumsa/jQuery.threesixty/master/jquery.threesixty.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //Load the image URLs into an Array.
+            var arr = new Array();
+            $("#dvImages img").each(function () {
+                arr.push($(this).attr("src"));
+            });
+
+            //Set the first image URL as source for the Product.
+            $("#product1, #product2, #product3").attr("src", arr[0]);
+
+            //Click mode.
+            $("#product1").threesixty({ images: arr,
+                method: 'click',
+                sensibility: 1
+            });
+
+            //MouseMove mode.
+            $("#product2").threesixty({ images: arr,
+                method: 'mousemove',
+                sensibility: 1
+            });
+
+            //Automatic mode.
+            $("#product3").threesixty({ images: arr,
+                method: 'auto',
+                direction: 'forward',
+                autoscrollspeed: 100
+            });
+        });
+    </script>
+</body>
+</html>
